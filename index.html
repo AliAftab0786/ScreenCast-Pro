@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Recorder</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
+        .custom-font {
+            font-family: 'Poppins', sans-serif;
         }
-        #videoElement, #canvasElement {
-            display: none;
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0);
+        color: aliceblue;
+      }
+      #videoElement,
+      #canvasElement {
+        display: none;
+      }
+      .custom-border{
+        border: 2px solid #fff;
+        
+      }
+      button{
+        background-color: rgb(30, 112, 171);
+      }
+      button:hover{
+        background-color: #077fe2;
+      }
+      a{
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+        a:hover{
+            background-color: #077fe2;
+            color: white;
         }
     </style>
-</head>
-<body>
-    <h1>Record Your Video</h1>
+  </head>
+  <body>
+    <h1 class="flex items-center text-white text-5xl rounded-lg custom-border px-4 font-extrabold dark:text-white">SCREENCAST<span class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">PRO</span></h1>
     <video id="videoElement" width="640" height="480" autoplay></video>
     <canvas id="canvasElement" width="640" height="480"></canvas>
-    <button id="startRecording">Start Recording</button>
-    <button id="stopRecording" disabled>Stop Recording</button>
-    <button id="downloadVideo" disabled>Download Video</button>
+    <button id="startRecording" class="mt-5 custom-border rounded-lg px-4 bg-sky-500 hover:bg-sky-700">Start Recording</button>
+    <button id="stopRecording" disabled class="mt-5 custom-border rounded-lg px-4 bg-sky-500 hover:bg-sky-700">Stop Recording</button>
+    <button id="downloadVideo" disabled class="mt-5 custom-border rounded-lg px-4 bg-sky-500 hover:bg-sky-700">Download Video</button>
 
-    <div class="text-gray-300">
-        <div class="w-full flex justify-center items-center mb-5">
-            <a href="https://linkedin.com/in/ali-aftab-813043211" class="text-custom-white text-sm px-4 position-bottom hover:text-green-500">Redesigned & Developed by Ali Aftab</a>
+    <div class="fixed  bottom-0 left-0 right-0 text-gray-300">
+        <div class="w-full flex justify-center items-center mb-10">
+          <a 
+            href="https://linkedin.com/in/ali-aftab-813043211"
+            class="custom-border rounded-lg custom-border px-4 text-sm px-4 transition duration-300"
+            style="&:hover { color: #077fe2; }"
+          >Redesigned & Developed by Ali Aftab</a>
         </div>
-    </div>
+      </div>
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
